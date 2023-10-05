@@ -388,7 +388,6 @@ select{
     top: 70px;
     left: -90px;
     position: absolute;
-    /* background-color: #ccc; */
     border-radius: 20px;
 }
 
@@ -396,7 +395,6 @@ select{
     width: 640px;
     height: 360px;
     border-radius: 10px;
-    /* background: var(--information-500, #54a6ff); */
     padding-top: 24px;
     padding-left: 24px;
     background-image: url(../images/photo_2023-10-03_21-16-38.jpg);
@@ -439,6 +437,9 @@ select{
   }
   
   .headerCard img {
+    margin-left: 150px !important;
+    width: 340px;
+    height: 108px;
     margin-left: 100px;
     margin-bottom: 10px;
   }
@@ -613,8 +614,9 @@ select{
       }
       .headerCard img {
        position: absolute;
-        width: 232px;
-        height: 85px;
+       /* left: 10px; */
+        width: 196px !important;
+        height: 56px !important;
       }
      
       .card {
@@ -632,7 +634,9 @@ select{
         gap: 10px;
     }
     .headerCard{
+        padding-right: 10px;
         width: 85%;
+        height: 272px;
     }
     .headerCard img {
         margin-top: 30px;
@@ -675,6 +679,12 @@ select{
         display: flex;
         flex-direction: column;
        }
-      
+       .headerCard img {
+        margin-left: 80px !important;
+        width: 290px;
+        height: 88px;
+        margin-left: 100px;
+        margin-bottom: 10px;
+      }
    
 }

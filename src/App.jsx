@@ -12,8 +12,6 @@ import Car2 from "../images/Car (2).png";
 import Car3 from "../images/Car (3).png";
 import Gas from "../images/gas-station.png";
 
-
-
 const obj = [
     {
         location: "Locations",
@@ -198,7 +196,7 @@ const App = () => {
     const [isLiked, setIsLiked] = useState(false);
     const [openModul, setopenModul] = useState(false);
     const [data, setData] = useState(arr);
-    const [isTyping,setIsTyping] = useState(false);
+    const [isTyping, setIsTyping] = useState(false);
 
     function modul() {
         setopenModul(true);
@@ -215,73 +213,69 @@ const App = () => {
         });
     };
 
-    const [searchTerm, setSearchTerm] = useState('');
-  
-   
+    const [searchTerm, setSearchTerm] = useState("");
 
     return (
         <div className="wrapper">
-            <div className="div">
-                <like />
-            </div>
-
             <header>
                 <div className="left-header">
                     <div className="morent">Morent</div>
 
                     <div className="search">
                         <i className="fa-solid fa-magnifying-glass"></i>
-                        
-     <div>
-      <input
-        type="text"
-        placeholder="Search something here"
-        value={searchTerm}
-        onChange={(e) => {setSearchTerm(e.target.value)} }
-      />
-      <ul className="ul">
-        {arr.filter((user) =>
-          user.title.toLowerCase().includes(searchTerm.toLowerCase())
-        ).map((user) => (
-            <section className="car">
-            <div className="car-header">
-                <div className="title">{user.title}</div>
-                <span onClick={() => changeLiked(e.id)}>
-                    {user.isLiked ? (
-                        <i class="fa-solid fa-heart" style={{ color: "red" }}></i>
-                    ) : (
-                        <i class="fa-regular fa-heart"></i>
-                    )}
-                </span>
-            </div>
-            <div className="sport">{user.sport}</div>
-            <img className="cars-car" src={user.img} alt="#" />
 
-            <div className="car-tools">
-                <div className="tools">
-                    <img src={Gas} alt="#" />
-                    <div className="90L">{user.oil}</div>
-                </div>
-                <div className="tools">
-                    <img src={Gas} alt="#" />
-                    <div className="90L">{user.oil}</div>
-                </div>
-                <div className="tools">
-                    <img src={Gas} alt="#" />
-                    <div className="90L">{user.oil}</div>
-                </div>
-            </div>
+                        <div>
+                            <input
+                                type="text"
+                                placeholder="Search something here"
+                                value={searchTerm}
+                                onChange={(e) => {
+                                    setSearchTerm(e.target.value);
+                                }}
+                            />
+                            <ul className="ul">
+                                {arr
+                                    .filter((user) => user.title.toLowerCase().includes(searchTerm.toLowerCase()))
+                                    .map((user) => (
+                                        <section className="car">
+                                            <div className="car-header">
+                                                <div className="title">{user.title}</div>
+                                                <span onClick={() => changeLiked(e.id)}>
+                                                    {user.isLiked ? (
+                                                        <i class="fa-solid fa-heart" style={{ color: "red" }}></i>
+                                                    ) : (
+                                                        <i class="fa-regular fa-heart"></i>
+                                                    )}
+                                                </span>
+                                            </div>
+                                            <div className="sport">{user.sport}</div>
+                                            <img className="cars-car" src={user.img} alt="#" />
 
-            <div className="car-footer">
-                <div className="price">
-                    {user.price} <span>day</span>
-                </div>
-                <button className="car-btn">Rent Now</button>
-            </div>
-        </section>
-        ))}
-      </ul>
-    </div>
+                                            <div className="car-tools">
+                                                <div className="tools">
+                                                    <img src={Gas} alt="#" />
+                                                    <div className="90L">{user.oil}</div>
+                                                </div>
+                                                <div className="tools">
+                                                    <img src={Gas} alt="#" />
+                                                    <div className="90L">{user.oil}</div>
+                                                </div>
+                                                <div className="tools">
+                                                    <img src={Gas} alt="#" />
+                                                    <div className="90L">{user.oil}</div>
+                                                </div>
+                                            </div>
+
+                                            <div className="car-footer">
+                                                <div className="price">
+                                                    {user.price} <span>day</span>
+                                                </div>
+                                                <button className="car-btn">Rent Now</button>
+                                            </div>
+                                        </section>
+                                    ))}
+                            </ul>
+                        </div>
                         <img className="filter" src={filter} alt="#" />
                     </div>
                 </div>
@@ -351,30 +345,26 @@ const App = () => {
             </header>
 
             <div className="ads">
-            <div className="headerCar df jc-sa">
-            <div className="headerCard">
-              <h1 className="TheBestText">The Best Platform for Car Rental</h1>
-              <p className="EaseOfText">
-                Ease of doing a car rental safely and reliably. Of course at a
-                low price.
-              </p>
-             <button className="rent-car">Rent Car</button>
-              <br />
-              <img src={Car} alt="" />
-            </div>
-            <div className="headerCard headerCard1">
-              <h1 className="TheBestText">
-                Easy way to rent a car at a low price
-              </h1>
-              <p className="EaseOfText">
-                Providing cheap car rental services and safe and comfortable
-                facilities.
-              </p>
-              <button className="rent-car">Rent Car</button>
-              <br />
-              <img src={Car} alt="" />
-            </div>
-          </div>
+                <div className="headerCar df jc-sa">
+                    <div className="headerCard">
+                        <h1 className="TheBestText">The Best Platform for Car Rental</h1>
+                        <p className="EaseOfText">
+                            Ease of doing a car rental safely and reliably. Of course at a low price.
+                        </p>
+                        <button className="rent-car">Rent Car</button>
+                        <br />
+                        <img src={Car} alt="" />
+                    </div>
+                    <div className="headerCard headerCard1">
+                        <h1 className="TheBestText">Easy way to rent a car at a low price</h1>
+                        <p className="EaseOfText">
+                            Providing cheap car rental services and safe and comfortable facilities.
+                        </p>
+                        <button className="rent-car">Rent Car</button>
+                        <br />
+                        <img src={Car} alt="" />
+                    </div>
+                </div>
             </div>
 
             {/* ??????????????????????????????????????????? */}
@@ -389,40 +379,35 @@ const App = () => {
                                 </div>
 
                                 <div className="cards">
+                                    <div className="select">
+                                        <div className="location">Locations</div>
+                                        <select className="select-city" name="cars" id="cars">
+                                            <option value="volvo">Semarang</option>
+                                            <option value="saab">Termiz</option>
+                                            <option value="mercedes">Samarkand</option>
+                                            <option value="audi">Toshkent</option>
+                                        </select>
+                                    </div>
 
-                               <div className="select">
-                                <div className="location">Locations</div>
-                               <select className="select-city" name="cars" id="cars">
-                                    
-                                    <option value="volvo">Semarang</option>
-                                    <option value="saab">Termiz</option>
-                                    <option value="mercedes">Samarkand</option>
-                                    <option value="audi">Toshkent</option>
-                                </select>
-                               </div>
+                                    <div className="select">
+                                        <div className="location">Date</div>
+                                        <select className="select-city" name="cars" id="cars">
+                                            <option value="volvo">20 July 2022</option>
+                                            <option value="saab">01.01.2024</option>
+                                            <option value="mercedes">03.03.2024</option>
+                                            <option value="audi">05.05.2024</option>
+                                        </select>
+                                    </div>
 
-                               <div className="select">
-                                <div className="location">Date</div>
-                               <select className="select-city" name="cars" id="cars">
-                                    
-                                    <option value="volvo" >20 July 2022</option>
-                                    <option value="saab">01.01.2024</option>
-                                    <option value="mercedes">03.03.2024</option>
-                                    <option value="audi">05.05.2024</option>
-                                </select>
-                               </div>
-
-                               <div className="select">
-                                <div className="location">Time</div>
-                               <select className="select-city" name="cars" id="cars">
-                                    
-                                    <option value="volvo" >07.00</option>
-                                    <option value="saab">Morning</option>
-                                    <option value="mercedes">Afternoon</option>
-                                    <option value="audi">Evening</option>
-                                </select>
-                               </div>
-
+                                    <div className="select">
+                                        <div className="location">Time</div>
+                                        <select className="select-city" name="cars" id="cars">
+                                            <option value="volvo">07.00</option>
+                                            <option value="saab">Morning</option>
+                                            <option value="mercedes">Afternoon</option>
+                                            <option value="audi">Evening</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 
@@ -437,40 +422,35 @@ const App = () => {
                                 </div>
 
                                 <div className="cards">
+                                    <div className="select">
+                                        <div className="location">Locations</div>
+                                        <select className="select-city" name="cars" id="cars">
+                                            <option value="volvo">Semarang</option>
+                                            <option value="saab">Termiz</option>
+                                            <option value="mercedes">Samarkand</option>
+                                            <option value="audi">Toshkent</option>
+                                        </select>
+                                    </div>
 
-                               <div className="select">
-                                <div className="location">Locations</div>
-                               <select className="select-city" name="cars" id="cars">
+                                    <div className="select">
+                                        <div className="location">Date</div>
+                                        <select className="select-city" name="cars" id="cars">
+                                            <option value="volvo"> 20 July 2022</option>
+                                            <option value="saab">01.01.2024</option>
+                                            <option value="mercedes">03.03.2024</option>
+                                            <option value="audi">05.05.2024</option>
+                                        </select>
+                                    </div>
 
-                               <option value="volvo" >Semarang</option>
-                                    <option value="saab">Termiz</option>
-                                    <option value="mercedes">Samarkand</option>
-                                    <option value="audi">Toshkent</option>
-                                </select>
-                               </div>
-
-                               <div className="select">
-                                <div className="location">Date</div>
-                               <select className="select-city" name="cars" id="cars">
-                                    
-                               <option value="volvo" > 20 July 2022</option>
-                                    <option value="saab">01.01.2024</option>
-                                    <option value="mercedes">03.03.2024</option>
-                                    <option value="audi">05.05.2024</option>
-                                </select>
-                               </div>
-
-                               <div className="select">
-                                <div className="location">Time</div>
-                               <select className="select-city" name="cars" id="cars">
-                                    
-                               <option value="volvo" >07.00</option>
-                                    <option value="saab">Morning</option>
-                                    <option value="mercedes">Afternoon</option>
-                                    <option value="audi">Evening</option>
-                                </select>
-                               </div>
-
+                                    <div className="select">
+                                        <div className="location">Time</div>
+                                        <select className="select-city" name="cars" id="cars">
+                                            <option value="volvo">07.00</option>
+                                            <option value="saab">Morning</option>
+                                            <option value="mercedes">Afternoon</option>
+                                            <option value="audi">Evening</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </section>
@@ -491,40 +471,35 @@ const App = () => {
                                 </div>
 
                                 <div className=" flex cards">
+                                    <div className="select">
+                                        <div className="location">Locations</div>
+                                        <select className="select-city" name="cars" id="cars">
+                                            <option value="volvo">Select your city</option>
+                                            <option value="saab">Termiz</option>
+                                            <option value="mercedes">Samarkand</option>
+                                            <option value="audi">Toshkent</option>
+                                        </select>
+                                    </div>
 
-                               <div className="select">
-                                <div className="location">Locations</div>
-                               <select className="select-city" name="cars" id="cars">
-                                    
-                                    <option value="volvo">Select your city</option>
-                                    <option value="saab">Termiz</option>
-                                    <option value="mercedes">Samarkand</option>
-                                    <option value="audi">Toshkent</option>
-                                </select>
-                               </div>
+                                    <div className="select">
+                                        <div className="location">Date</div>
+                                        <select className="select-city" name="cars" id="cars">
+                                            <option value="volvo">Select your date</option>
+                                            <option value="saab">01.01.2024</option>
+                                            <option value="mercedes">03.03.2024</option>
+                                            <option value="audi">05.05.2024</option>
+                                        </select>
+                                    </div>
 
-                               <div className="select">
-                                <div className="location">Date</div>
-                               <select className="select-city" name="cars" id="cars">
-                                    
-                                    <option value="volvo" >Select your date</option>
-                                    <option value="saab">01.01.2024</option>
-                                    <option value="mercedes">03.03.2024</option>
-                                    <option value="audi">05.05.2024</option>
-                                </select>
-                               </div>
-
-                               <div className="select">
-                                <div className="location">Time</div>
-                               <select className="select-city" name="cars" id="cars">
-                                    
-                                    <option value="volvo" >Select your time</option>
-                                    <option value="saab">Morning</option>
-                                    <option value="mercedes">Afternoon</option>
-                                    <option value="audi">Evening</option>
-                                </select>
-                               </div>
-
+                                    <div className="select">
+                                        <div className="location">Time</div>
+                                        <select className="select-city" name="cars" id="cars">
+                                            <option value="volvo">Select your time</option>
+                                            <option value="saab">Morning</option>
+                                            <option value="mercedes">Afternoon</option>
+                                            <option value="audi">Evening</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 
@@ -539,40 +514,35 @@ const App = () => {
                                 </div>
 
                                 <div className="flex cards">
+                                    <div className="select">
+                                        <div className="location">Locations</div>
+                                        <select className="select-city" name="cars" id="cars">
+                                            <option value="volvo">Select your city</option>
+                                            <option value="saab">Termiz</option>
+                                            <option value="mercedes">Samarkand</option>
+                                            <option value="audi">Toshkent</option>
+                                        </select>
+                                    </div>
 
-                               <div className="select">
-                                <div className="location">Locations</div>
-                               <select className="select-city" name="cars" id="cars">
+                                    <div className="select">
+                                        <div className="location">Date</div>
+                                        <select className="select-city" name="cars" id="cars">
+                                            <option value="volvo">Select your date</option>
+                                            <option value="saab">01.01.2024</option>
+                                            <option value="mercedes">03.03.2024</option>
+                                            <option value="audi">05.05.2024</option>
+                                        </select>
+                                    </div>
 
-                               <option value="volvo" >Select your city</option>
-                                    <option value="saab">Termiz</option>
-                                    <option value="mercedes">Samarkand</option>
-                                    <option value="audi">Toshkent</option>
-                                </select>
-                               </div>
-
-                               <div className="select">
-                                <div className="location">Date</div>
-                               <select className="select-city" name="cars" id="cars">
-                                    
-                               <option value="volvo" >Select your date</option>
-                                    <option value="saab">01.01.2024</option>
-                                    <option value="mercedes">03.03.2024</option>
-                                    <option value="audi">05.05.2024</option>
-                                </select>
-                               </div>
-
-                               <div className="select">
-                                <div className="location">Time</div>
-                               <select className="select-city" name="cars" id="cars">
-                                    
-                               <option value="volvo" >Select your time</option>
-                                    <option value="saab">Morning</option>
-                                    <option value="mercedes">Afternoon</option>
-                                    <option value="audi">Evening</option>
-                                </select>
-                               </div>
-
+                                    <div className="select">
+                                        <div className="location">Time</div>
+                                        <select className="select-city" name="cars" id="cars">
+                                            <option value="volvo">Select your time</option>
+                                            <option value="saab">Morning</option>
+                                            <option value="mercedes">Afternoon</option>
+                                            <option value="audi">Evening</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </section>
