@@ -196,7 +196,10 @@ const App = () => {
     const [isLiked, setIsLiked] = useState(false);
     const [openModul, setopenModul] = useState(false);
     const [data, setData] = useState(arr);
-    const [isTyping, setIsTyping] = useState(false);
+
+    function close() {
+        isLiked = true;
+    }
 
     function modul() {
         setopenModul(true);
@@ -282,56 +285,65 @@ const App = () => {
 
                 <div className="right-header">
                     <div id="modul" style={{ display: "inline-block" }} className="modul-box">
-                        <i id="icon" onClick={() => modul()} className="fa-solid fa-heart"></i>
+                    <span className="round" ></span>
+                        <i id="icon" onClick={() => modul()} className="fa-solid fa-heart">
+                        </i>
                         {openModul && (
-                            <div className="box-modul-car">
-                                {data.map((el) => {
-                                    return (
-                                        <>
-                                            {el.isLiked && (
-                                                <section className="car">
-                                                    <div className="car-header">
-                                                        <div className="title">{el.title}</div>
-                                                        <span onClick={() => changeLiked(el.id)}>
-                                                            {el.isLiked ? (
-                                                                <i
-                                                                    class="fa-solid fa-heart"
-                                                                    style={{ color: "red" }}
-                                                                ></i>
-                                                            ) : (
-                                                                <i class="fa-regular fa-heart"></i>
-                                                            )}
-                                                        </span>
-                                                    </div>
-                                                    <div className="sport">{el.sport}</div>
-                                                    <img className="cars-car" src={el.img} alt="#" />
+                            <div onClick={() => setopenModul((prev) => !prev)} className="box-modul-car">
+                                <div  className="back">
+                                    <div  className="close">
+                                        ❌
+                                    </div>
+                                    <div className="box-cars">
+                                        {data.map((el) => {
+                                            return (
+                                                <>
+                                                    {el.isLiked && (
+                                                        <section className="car">
+                                                            <div className="car-header">
+                                                                <div className="title">{el.title}</div>
+                                                                <span onClick={() => changeLiked(el.id)}>
+                                                                    {el.isLiked ? (
+                                                                        <i
+                                                                            class="fa-solid fa-heart"
+                                                                            style={{ color: "red" }}
+                                                                        ></i>
+                                                                    ) : (
+                                                                        <i class="fa-regular fa-heart"></i>
+                                                                    )}
+                                                                </span>
+                                                            </div>
+                                                            <div className="sport">{el.sport}</div>
+                                                            <img className="cars-car" src={el.img} alt="#" />
 
-                                                    <div className="car-tools">
-                                                        <div className="tools">
-                                                            <img src={Gas} alt="#" />
-                                                            <div className="90L">{el.oil}</div>
-                                                        </div>
-                                                        <div className="tools">
-                                                            <img src={Gas} alt="#" />
-                                                            <div className="90L">{el.oil}</div>
-                                                        </div>
-                                                        <div className="tools">
-                                                            <img src={Gas} alt="#" />
-                                                            <div className="90L">{el.oil}</div>
-                                                        </div>
-                                                    </div>
+                                                            <div className="car-tools">
+                                                                <div className="tools">
+                                                                    <img src={Gas} alt="#" />
+                                                                    <div className="90L">{el.oil}</div>
+                                                                </div>
+                                                                <div className="tools">
+                                                                    <img src={Gas} alt="#" />
+                                                                    <div className="90L">{el.oil}</div>
+                                                                </div>
+                                                                <div className="tools">
+                                                                    <img src={Gas} alt="#" />
+                                                                    <div className="90L">{el.oil}</div>
+                                                                </div>
+                                                            </div>
 
-                                                    <div className="car-footer">
-                                                        <div className="price">
-                                                            {el.price} <span>day</span>
-                                                        </div>
-                                                        <button className="car-btn">Rent Now</button>
-                                                    </div>
-                                                </section>
-                                            )}
-                                        </>
-                                    );
-                                })}
+                                                            <div className="car-footer">
+                                                                <div className="price">
+                                                                    {el.price} <span>day</span>
+                                                                </div>
+                                                                <button className="car-btn">Rent Now</button>
+                                                            </div>
+                                                        </section>
+                                                    )}
+                                                </>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
                             </div>
                         )}
                     </div>
@@ -618,6 +630,8 @@ const App = () => {
                     })}
                 </div>
             </section>
+
+            <hr />
 
             <div className="eng-footer">
                 <div className="left-side">©2022 MORENT. All rights reserved</div>
