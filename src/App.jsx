@@ -1,7 +1,6 @@
 import { Fragment, useState } from "react";
-import Like from "./Liked";
 import { Svg } from "./Svg";
-import { Ads } from "./Ads";
+import "./app.css";
 import PROFILE from "../images/Profil.png";
 import filter from "../images/filter.png";
 import ad1 from "../images/Ads 1.png";
@@ -14,7 +13,6 @@ import Car3 from "../images/Car (3).png";
 import Gas from "../images/gas-station.png";
 
 
-import "./app.css";
 
 const obj = [
     {
