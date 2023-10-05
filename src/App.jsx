@@ -289,7 +289,7 @@ const App = () => {
                         <i id="icon" onClick={() => modul()} className="fa-solid fa-heart"></i>
                         {openModul && (
                             <div onClick={() => setopenModul((prev) => !prev)} className="box-modul-car">
-                                <div className="back">
+                                <div className="back"> 
                                     <div className="close">❌</div>
                                     <div className="box-cars">
                                         {data.map((el) => {
