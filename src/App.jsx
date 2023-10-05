@@ -285,15 +285,12 @@ const App = () => {
 
                 <div className="right-header">
                     <div id="modul" style={{ display: "inline-block" }} className="modul-box">
-                    <span className="round" ></span>
-                        <i id="icon" onClick={() => modul()} className="fa-solid fa-heart">
-                        </i>
+                        <span className="round"></span>
+                        <i id="icon" onClick={() => modul()} className="fa-solid fa-heart"></i>
                         {openModul && (
                             <div onClick={() => setopenModul((prev) => !prev)} className="box-modul-car">
-                                <div  className="back">
-                                    <div  className="close">
-                                        ❌
-                                    </div>
+                                <div className="back">
+                                    <div className="close">❌</div>
                                     <div className="box-cars">
                                         {data.map((el) => {
                                             return (
