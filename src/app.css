@@ -45,15 +45,13 @@ header {
     padding-top: 10px;
 }
 .ul {
+    max-width: 1312px;
+    margin: 0 auto;
     margin-top: 50px;
-    padding: 30px;
     border-radius: 10px;
-    background-color: #00000070;
-    position: absolute;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    display: none;
+    gap: 20;
 }
 input:focus ~ .ul {
     display: flex;
