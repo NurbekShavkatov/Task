@@ -3,8 +3,6 @@ import { Svg } from "./Svg";
 import "./app.css";
 import PROFILE from "../images/Profil.png";
 import filter from "../images/filter.png";
-import ad1 from "../images/Ads 1.png";
-import ad2 from "../images/Ads 2.png";
 import Switch from "../images/Switch.png";
 import Car from "../images/car.png";
 import Car1 from "../images/car (1).png";
@@ -208,7 +206,6 @@ const App = () => {
         setData((prev) => {
             return prev.map((el) => {
                 if (el.id === id) {
-                    console.log("xa", id, isLiked);
                     return { ...el, isLiked: !el.isLiked };
                 }
                 return el;
@@ -217,7 +214,6 @@ const App = () => {
     };
 
     const [searchTerm, setSearchTerm] = useState("");
-    console.log(searchTerm)
     return (
         <div className="wrapper">
             <header>
@@ -246,9 +242,11 @@ const App = () => {
                         <span className="round"></span>
                         <i id="icon" onClick={() => modul()} className="fa-solid fa-heart"></i>
                         {openModul && (
-                            <div onClick={() => setopenModul((prev) => !prev)} className="box-modul-car">
+                            <div className="box-modul-car">
                                 <div className="back">
-                                    <div className="close">❌</div>
+                                    <div onClick={() => setopenModul((prev) => !prev)} className="close">
+                                        ❌
+                                    </div>
                                     <div className="box-cars">
                                         {data.map((el) => {
                                             return (
@@ -519,49 +517,49 @@ const App = () => {
 
             {searchTerm.length ? (
                 <>
-                    <p className="popular">search results</p>
-                <ul className="ul">
-                    {arr
-                        .filter((user) => user.title.toLowerCase().includes(searchTerm.toLowerCase()))
-                        .map((user) => (
-                            <section className="car">
-                                <div className="car-header">
-                                    <div className="title">{user.title}</div>
-                                    <span onClick={() => changeLiked(e.id)}>
-                                        {user.isLiked ? (
-                                            <i class="fa-solid fa-heart" style={{ color: "red" }}></i>
-                                        ) : (
-                                            <i class="fa-regular fa-heart"></i>
-                                        )}
-                                    </span>
-                                </div>
-                                <div className="sport">{user.sport}</div>
-                                <img className="cars-car" src={user.img} alt="#" />
+                    <p className="popular">Search results</p>
+                    <ul className="ul">
+                        {arr
+                            .filter((user) => user.title.toLowerCase().includes(searchTerm.toLowerCase()))
+                            .map((user) => (
+                                <section className="car">
+                                    <div className="car-header">
+                                        <div className="title">{user.title}</div>
+                                        <span onClick={() => changeLiked(e.id)}>
+                                            {user.isLiked ? (
+                                                <i class="fa-solid fa-heart" style={{ color: "red" }}></i>
+                                            ) : (
+                                                <i class="fa-regular fa-heart"></i>
+                                            )}
+                                        </span>
+                                    </div>
+                                    <div className="sport">{user.sport}</div>
+                                    <img className="cars-car" src={user.img} alt="#" />
 
-                                <div className="car-tools">
-                                    <div className="tools">
-                                        <img src={Gas} alt="#" />
-                                        <div className="90L">{user.oil}</div>
+                                    <div className="car-tools">
+                                        <div className="tools">
+                                            <img src={Gas} alt="#" />
+                                            <div className="90L">{user.oil}</div>
+                                        </div>
+                                        <div className="tools">
+                                            <img src={Gas} alt="#" />
+                                            <div className="90L">{user.oil}</div>
+                                        </div>
+                                        <div className="tools">
+                                            <img src={Gas} alt="#" />
+                                            <div className="90L">{user.oil}</div>
+                                        </div>
                                     </div>
-                                    <div className="tools">
-                                        <img src={Gas} alt="#" />
-                                        <div className="90L">{user.oil}</div>
-                                    </div>
-                                    <div className="tools">
-                                        <img src={Gas} alt="#" />
-                                        <div className="90L">{user.oil}</div>
-                                    </div>
-                                </div>
 
-                                <div className="car-footer">
-                                    <div className="price">
-                                        {user.price} <span>day</span>
+                                    <div className="car-footer">
+                                        <div className="price">
+                                            {user.price} <span>day</span>
+                                        </div>
+                                        <button className="car-btn">Rent Now</button>
                                     </div>
-                                    <button className="car-btn">Rent Now</button>
-                                </div>
-                            </section>
-                        ))}
-                </ul>
+                                </section>
+                            ))}
+                    </ul>
                 </>
             ) : (
                 <>
