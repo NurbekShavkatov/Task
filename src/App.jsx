@@ -9,6 +9,7 @@ import Car1 from "../images/car (1).png";
 import Car2 from "../images/Car (2).png";
 import Car3 from "../images/Car (3).png";
 import Gas from "../images/gas-station.png";
+import round from "../images/round.png";
 
 const obj = [
     {
@@ -275,11 +276,11 @@ const App = () => {
                                                                     <div className="90L">{el.oil}</div>
                                                                 </div>
                                                                 <div className="tools">
-                                                                    <img src={Gas} alt="#" />
+                                                                    <img src={round} alt="#" />
                                                                     <div className="90L">{el.oil}</div>
                                                                 </div>
                                                                 <div className="tools">
-                                                                    <img src={Gas} alt="#" />
+                                                                    <i class="fa-solid fa-users"></i>
                                                                     <div className="90L">{el.oil}</div>
                                                                 </div>
                                                             </div>
@@ -588,11 +589,11 @@ const App = () => {
                                             <div className="90L">{e.oil}</div>
                                         </div>
                                         <div className="tools">
-                                            <img src={Gas} alt="#" />
+                                            <img src={round} alt="#" />
                                             <div className="90L">{e.oil}</div>
                                         </div>
                                         <div className="tools">
-                                            <img src={Gas} alt="#" />
+                                            <i class="fa-solid fa-users"></i>
                                             <div className="90L">{e.oil}</div>
                                         </div>
                                     </div>
